@@ -14,7 +14,7 @@ class DeleteTable(QWidget):
         self.setStyleSheet("background-color:#392F5A; color:white;") 
         self.setFixedSize(self.size())  #block extending of window
 
-    def UI(self):
+    async def UI(self):
         self.GetTables()
         self.Widgets()
         self.Layout()
@@ -62,5 +62,5 @@ class DeleteTable(QWidget):
             QMessageBox.information(self, "Warning!", "FAILED!")
 
 
-    def TakeDataBaseName(self,name):
+    async def TakeDataBaseName(self,name):
         self.dbname = name

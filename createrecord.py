@@ -15,7 +15,7 @@ class CreateRecord(QWidget):
         self.setStyleSheet("background-color:#FD9A29; color:white;") 
         self.setFixedSize(self.size())  #block extending of window
 
-    def UI(self):
+    async def UI(self):
         self.GetTables()
         self.Widgets()
         self.Layout()
@@ -111,6 +111,6 @@ class CreateRecord(QWidget):
         self.close()
 
 
-    def TakeDataBaseName(self, name):
+    async def TakeDataBaseName(self, name):
         self.dbname = name
 

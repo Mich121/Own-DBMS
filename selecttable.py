@@ -3,7 +3,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
-
 class SelectTable(QWidget):
     def __init__(self):
         super().__init__()
@@ -15,7 +14,7 @@ class SelectTable(QWidget):
         self.setStyleSheet("background-color:#FAAC40; color:white;") 
         self.setFixedSize(self.size())  #block extending of window
 
-    def UI(self):
+    async def UI(self):
         self.GetTables()
         self.Widgets()
         self.Layout()
@@ -95,5 +94,5 @@ class SelectTable(QWidget):
          self.Table.setHorizontalHeaderItem(i, QTableWidgetItem(columnname[0]))
 
 
-    def TakeDataBaseName(self, name):
+    async def TakeDataBaseName(self, name):
         self.dbname = name

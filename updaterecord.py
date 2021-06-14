@@ -15,7 +15,7 @@ class UpdateRecord(QWidget):
         self.setStyleSheet("background-color:#FAAC40; color:white;") 
         self.setFixedSize(self.size())  #block extending of window
 
-    def UI(self):
+    async def UI(self):
         self.GetTables()
         self.Widgets()
         self.Layout()
@@ -129,7 +129,7 @@ class UpdateRecord(QWidget):
             QMessageBox.information(self,"Warning!","Failed!")
 
 
-    def TakeDataBaseName(self, name):
+    async def TakeDataBaseName(self, name):
         self.dbname = name
 
 

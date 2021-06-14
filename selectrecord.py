@@ -2,7 +2,7 @@ import connection
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-
+import asyncio
 
 class SelectRecord(QWidget):
     def __init__(self):
@@ -15,7 +15,7 @@ class SelectRecord(QWidget):
         self.setStyleSheet("background-color:#525A78; color:white;") 
         self.setFixedSize(self.size())  #block extending of window
 
-    def UI(self):
+    async def UI(self):
         self.GetTables()
         self.Widgets()
         self.Layout()
@@ -115,7 +115,7 @@ class SelectRecord(QWidget):
 
 
 
-    def TakeDataBaseName(self, name):
+    async def TakeDataBaseName(self, name):
         self.dbname = name
 
 

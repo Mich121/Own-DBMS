@@ -15,7 +15,7 @@ class DeleteRecord(QWidget):
         self.setStyleSheet("background-color:#789AA5; color:white;") 
         self.setFixedSize(self.size())  #block extending of window
 
-    def UI(self):
+    async def UI(self):
         self.GetTables()
         self.Widgets()
         self.Layout()
@@ -108,7 +108,7 @@ class DeleteRecord(QWidget):
             QMessageBox.information(self,"Warning!","Failed!")
 
 
-    def TakeDataBaseName(self, name):
+    async def TakeDataBaseName(self, name):
         self.dbname = name
 
 

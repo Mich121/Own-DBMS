@@ -7,6 +7,8 @@ import createrecord, deleterecord, selectrecord, updaterecord
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+import asyncio
+import time
 
 class Window(QMainWindow):
     def __init__(self):
@@ -266,56 +268,56 @@ class Window(QMainWindow):
     def FuncDeleteTableBtn(self):
         if self.dbName != " ":
             self.deletetable = deletetable.DeleteTable()
-            self.deletetable.TakeDataBaseName(self.dbName)
-            self.deletetable.UI()
+            asyncio.run(self.deletetable.TakeDataBaseName(self.dbName))
+            asyncio.run(self.deletetable.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to delete table!")
-
+    
     def FuncSelectTableBtn(self):
         if self.dbName != " ":
             self.selecttable = selecttable.SelectTable()
-            self.selecttable.TakeDataBaseName(self.dbName)
-            self.selecttable.UI()
+            asyncio.run(self.selecttable.TakeDataBaseName(self.dbName))
+            asyncio.run(self.selecttable.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to select table!")
 
     def FuncUpdateTableBtn(self):
         if self.dbName != " ":
             self.updatetable = updatetable.UpdateTable()
-            self.updatetable.TakeDataBaseName(self.dbName)
-            self.updatetable.UI()
+            asyncio.run(self.updatetable.TakeDataBaseName(self.dbName))
+            asyncio.run(self.updatetable.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to update table!")
 
     def FuncCreateRecord(self):
         if self.dbName != " ":
             self.createrecord = createrecord.CreateRecord()
-            self.createrecord.TakeDataBaseName(self.dbName)
-            self.createrecord.UI()
+            asyncio.run(self.createrecord.TakeDataBaseName(self.dbName))
+            asyncio.run(self.createrecord.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to create record!")
 
     def FuncDeleteRecord(self):
         if self.dbName != " ":
             self.deleterecord = deleterecord.DeleteRecord()
-            self.deleterecord.TakeDataBaseName(self.dbName)
-            self.deleterecord.UI()
+            asyncio.run(self.deleterecord.TakeDataBaseName(self.dbName))
+            asyncio.run(self.deleterecord.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to delete records!")
 
     def FuncUpdateRecord(self):
         if self.dbName != " ":
             self.updaterecord = updaterecord.UpdateRecord()
-            self.updaterecord.TakeDataBaseName(self.dbName)
-            self.updaterecord.UI()
+            asyncio.run(self.updaterecord.TakeDataBaseName(self.dbName))
+            asyncio.run(self.updaterecord.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to update records!")
 
     def FuncSelectRecord(self):
         if self.dbName != " ":
             self.selectrecord = selectrecord.SelectRecord()
-            self.selectrecord.TakeDataBaseName(self.dbName)
-            self.selectrecord.UI()
+            asyncio.run(self.selectrecord.TakeDataBaseName(self.dbName))
+            asyncio.run(self.selectrecord.UI())
         else:
             QMessageBox.information(self,"Warning!","You must choose database to select records!")
 """
